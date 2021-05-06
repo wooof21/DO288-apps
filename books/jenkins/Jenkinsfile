@@ -109,7 +109,7 @@ pipeline {
                 }
                 script {
 			openshift.withCluster() {
-				openshit.tag("${DEV_PROJECT}/books:latest", "${STAGE_PROJECT}/books:stage")
+				openshift.tag("${DEV_PROJECT}/books:latest", "${STAGE_PROJECT}/books:stage")
 			}
 		}
             }
