@@ -61,7 +61,7 @@ pipeline {
                 sh '''
 			oc project ${DEV_PROJECT}
 			oc new-app --as-deployment-config --name books nodejs:12~${APP_GIT_URL} \
-			--build-env nexus-common.apps.na45.prod.nextcle.com
+			--build-env npm_config_registry=${NEXUS_SERVER}
 			--context-dir ${APP_NAME}
 
 			oc expose svc/${APP_NAME}
